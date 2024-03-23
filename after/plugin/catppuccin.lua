@@ -46,14 +46,12 @@ require("catppuccin").setup({
     },
 })
 
-function SetDefaultColorScheme(color) 
-	color = color or "catppuccin-mocha"
-	vim.cmd.colorscheme(color)
+function SetDefaultColorScheme(color)
+    color = color or "catppuccin-mocha"
+    vim.cmd.colorscheme(color)
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 SetDefaultColorScheme()
-
