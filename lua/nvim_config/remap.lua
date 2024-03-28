@@ -7,8 +7,8 @@ vim.keymap.set("n", "Y", "yg$")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- half page navigation - keep cursor at col 1
-vim.keymap.set("n", "<C-e>", "<C-d>zz")
-vim.keymap.set("n", "<C-n>", "<C-u>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz") -- up
+vim.keymap.set("n", "<C-e>", "<C-d>zz") -- down
 
 -- when searching terms keep cursor at col 1
 vim.keymap.set("n", "n", "nzzzv")
