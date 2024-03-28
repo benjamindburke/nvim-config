@@ -19,6 +19,7 @@ end)
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require("mason").setup({})
 require("mason-lspconfig").setup({
+    -- full list: https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
     ensure_installed = {
         -- some language servers require npm (node.js)
         "bashls",
@@ -61,8 +62,8 @@ cmp.setup({
     },
     formatting = lsp_zero.cmp_format({ details = false }),
     mapping = cmp.mapping.preset.insert({
-        ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-        ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+        ["<C-j>"] = cmp.mapping.select_prev_item(cmp_select),
+        ["<C-k>"] = cmp.mapping.select_next_item(cmp_select),
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         ["<C-Space>"] = cmp.mapping.complete(),
     })
