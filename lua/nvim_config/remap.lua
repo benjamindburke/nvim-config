@@ -1,7 +1,14 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- in visual mode, select text and then hold Shift+J to move text up
+vim.keymap.set("v", "J", ":m '<-2<CR>gv=gv")
+-- in visual mode, select text and then hold Shift+K to move text down
+vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv")
+
+-- navigate between symbols - jump out of definition (pop tag from stack)
+vim.keymap.set("n", "<C-[>", "<C-RightMouse>")
+-- navigate between symbols - jump to definition (push tag to stack)
+vim.keymap.set("n", "<C-]>", "<C-]>")
 
 vim.keymap.set("n", "Y", "yg$")
 vim.keymap.set("n", "J", "mzJ`z")
