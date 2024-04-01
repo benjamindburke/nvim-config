@@ -1,3 +1,9 @@
+local catppuccin = {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+}
+
 require("catppuccin").setup({
     flavour = "mocha",
     background = { -- :h background
@@ -30,7 +36,23 @@ require("catppuccin").setup({
         operators = {},
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
     },
-    color_overrides = {},
+    color_overrides = {
+        mocha = {
+            text     = "#F4CDE9",
+            subtext1 = "#DEBAD4",
+            subtext0 = "#C8A6BE",
+            overlay2 = "#B293A8",
+            overlay1 = "#9C7F92",
+            overlay0 = "#866C7D",
+            surface2 = "#705867",
+            surface1 = "#5A4551",
+            surface0 = "#44313B",
+
+            base     = "#352939",
+            mantle   = "#211924",
+            crust    = "#1A1016",
+        },
+    },
     custom_highlights = {},
     integrations = {
         cmp = true,
@@ -46,12 +68,5 @@ require("catppuccin").setup({
     },
 })
 
-function SetDefaultColorScheme(color)
-    color = color or "catppuccin-mocha"
-    vim.cmd.colorscheme(color)
-
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
-
-SetDefaultColorScheme()
+vim.cmd.colorscheme "catppuccin-mocha"
+return catppuccin
