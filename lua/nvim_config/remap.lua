@@ -1,3 +1,4 @@
+-- file directory view
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- in visual mode, select text and then hold Shift+J to move text up
@@ -63,3 +64,16 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- navigate to next pane
+vim.keymap.set("n", "<leader>w<Right>", "<C-w>w")
+-- navigate to previous pane
+vim.keymap.set("n", "<leader>w<Left>", "<C-w>W")
+
+-- navigate to bottom right pane
+vim.keymap.set("n", "<leader>w<Down>", "<C-w>b")
+-- navigate to top left pane
+vim.keymap.set("n", "<leader>w<Up>", "<C-w>t")
+
+-- create a new horizontal pane
+vim.keymap.set("n", "<leader>wn", vim.cmd.vnew)
