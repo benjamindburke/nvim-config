@@ -62,4 +62,13 @@ return require("packer").startup(function(use)
             {"rafamadriz/friendly-snippets"}
         }
     }
+
+    -- command output watcher
+    use "Makaze/watch.nvim"
+
+    -- terminal markdown renderer
+    use {
+        "ellisonleao/glow.nvim",
+        config = function() require("glow").setup({ style = "dark" }) end
+    }
 end)
