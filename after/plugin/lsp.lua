@@ -47,6 +47,7 @@ require("mason-lspconfig").setup({
         "gopls",
         "html",
         "lua_ls",
+        "sqlls",
         "pylsp",
         "terraformls",
         "yamlls"
