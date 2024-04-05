@@ -71,4 +71,22 @@ return require("packer").startup(function(use)
         "ellisonleao/glow.nvim",
         config = function() require("glow").setup({ style = "dark" }) end
     }
+
+    -- indentation lines
+    use "lukas-reineke/indent-blankline.nvim"
+
+    -- use openai to generate colorschemes from words
+    use { "svermeulen/text-to-colorscheme.nvim" }
+
+    -- suggests more efficient vim motions
+    use {
+        "m4xshen/hardtime.nvim",
+        requires = {
+            {"MunifTanjim/nui.nvim"},
+            {"nvim-lua/plenary.nvim"},
+        }
+    }
+
+    -- funzies
+    use "eandrju/cellular-automaton.nvim"
 end)
