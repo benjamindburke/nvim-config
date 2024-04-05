@@ -89,4 +89,16 @@ return require("packer").startup(function(use)
 
     -- funzies
     use "eandrju/cellular-automaton.nvim"
+
+    -- lua-based status bar at bottom of buffers
+    use {
+        "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons", opt = false }
+    }
+
+    -- lsp symbol provider
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
+    }
 end)

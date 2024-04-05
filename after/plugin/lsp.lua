@@ -1,4 +1,5 @@
 local lsp_zero = require("lsp-zero")
+local navic = require("nvim-navic")
 
 lsp_zero.on_attach(function(client, bufnr)
     local opts = {buffer = bufnr, remap = false}
@@ -28,6 +29,8 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+
+    navic.attach(client, bufnr)
 end)
 
 -- to learn how to use mason.nvim with lsp-zero
