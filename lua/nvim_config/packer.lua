@@ -101,4 +101,18 @@ return require("packer").startup(function(use)
         "SmiteshP/nvim-navic",
         requires = "neovim/nvim-lspconfig"
     }
+
+    -- breadcrumb symbols (like VSCode) above buffer
+    use({
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons"
+        },
+        after = "nvim-web-devicons",
+        config = function()
+            require("barbecue").setup()
+        end,
+    })
 end)
