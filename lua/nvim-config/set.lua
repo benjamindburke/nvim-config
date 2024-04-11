@@ -38,3 +38,11 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+vim.g.localmapleader = "\\"
+
+-----------------------------------
+-- plugin-specific setting changes
+-----------------------------------
+
+-- (barbecue.nvim) triggers CursorHold event faster
+vim.opt.updatetime = 200
