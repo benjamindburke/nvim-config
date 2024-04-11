@@ -46,10 +46,9 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 -- never press capital Q
 vim.keymap.set("n", "Q", "<nop>")
 
-
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- format code if lsp is capable of formatting
 vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.but.format()
+    vim.lsp.buf.format()
 end)
 
 -- quick fix navigation

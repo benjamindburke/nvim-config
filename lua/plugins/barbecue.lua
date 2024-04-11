@@ -6,6 +6,7 @@ return {
     dependencies = {
         "SmiteshP/nvim-navic",
         "nvim-tree/nvim-web-devicons",
+        -- listing catppuccin as a dependency ensures barbecue loads after catppuccin
         "catppuccin/nvim",
     },
     opts = {

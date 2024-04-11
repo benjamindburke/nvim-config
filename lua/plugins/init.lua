@@ -5,6 +5,12 @@ return {
     -- these make my terminal look nice.
     -----------------------------------
 
+    -- indentation lines with multiple color support
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+    },
+
     -- lua-based status bar at bottom of buffers
     {
         "nvim-lualine/lualine.nvim",
@@ -32,12 +38,7 @@ return {
     },
 
     -- funzies
-    {
-        "eandrju/cellular-automaton.nvim",
-        dependencies = {
-            { "nvim-treesitter/nvim-treesitter", lazy = false },
-        },
-    },
+    { "eandrju/cellular-automaton.nvim" },
 
     -----------------------------------
     -- functional plugins

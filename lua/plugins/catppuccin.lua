@@ -2,6 +2,7 @@
 return {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
     priority = 1000,
     opts = {
         flavour = "mocha",
@@ -57,6 +58,7 @@ return {
             cmp = true,
             gitsigns = true,
             harpoon = false,
+            indent_blankline = true,
             notify = false,
             nvimtree = true,
             treesitter = true,
@@ -65,37 +67,6 @@ return {
                 bold_basename = true,
                 dim_context = false,
                 alt_background = false,
-            },
-            indent_blankline = {
-                enabled = true,
-                scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
-                colored_indent_levels = false,
-            },
-            mini = {
-                enabled = true,
-                indentscope_color = "",
-            },
-            native_lsp = {
-                enabled = true,
-                virtual_text = {
-                    errors = { "italic" },
-                    hints = { "italic" },
-                    warnings = { "italic" },
-                    information = { "italic" },
-                },
-                underlines = {
-                    errors = { "underline" },
-                    hints = { "underline" },
-                    warnings = { "underline" },
-                    information = { "underline" },
-                },
-                inlay_hints = {
-                    background = true,
-                },
-            },
-            navic = {
-                enabled = false,
-                custom_bg = "NONE", -- "lualine" will set background to mantle
             },
             telescope = {
                 enabled = true,

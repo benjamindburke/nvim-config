@@ -1,3 +1,7 @@
+-----------------------------------
+-- set vim options
+-----------------------------------
+
 -- set large cursor
 vim.opt.guicursor = ""
 
