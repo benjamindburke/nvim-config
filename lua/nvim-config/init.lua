@@ -1,5 +1,5 @@
-require("nvim_config.set")
-require("nvim_config.remap")
+require("nvim-config.set")
+require("nvim-config.remap")
 
 require('text-to-colorscheme').setup {
     ai = {

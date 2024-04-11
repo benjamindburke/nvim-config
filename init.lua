@@ -1,1 +1,1 @@
-require("nvim_config")
+require("nvim-config")
