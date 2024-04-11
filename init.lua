@@ -112,7 +112,7 @@ require("mason-lspconfig").setup({
         -- this first function is the "default handler"
         -- it applies to every language server without a "custom handler"
         function(server_name)
-            require('lspconfig')[server_name].setup({})
+            require("lspconfig")[server_name].setup({})
         end,
         lua_ls = function()
             local lua_opts = lsp_zero.nvim_lua_ls()
@@ -124,16 +124,12 @@ require("mason-lspconfig").setup({
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
--- this is the function that loads the extra snippets to luasnip
--- from rafamadriz/friendly-snippets
-require("luasnip.loaders.from_vscode").lazy_load()
-
 cmp.setup({
     sources = {
         { name = "path" },
-        { name = "nvim_lsp" },
+        { name = "nvim_lsp", keyword_length = 3 },
+        { name = "nvim_lsp_signature_help", keyword_length = 3 },
         { name = "nvim_lua" },
-        { name = "luasnip", keyword_length = 2 },
         { name = "buffer", keyword_length = 3 },
     },
     formatting = lsp_zero.cmp_format({ details = false }),
@@ -141,18 +137,56 @@ cmp.setup({
         -- traverse suggested snippets
         ["<C-j>"] = cmp.mapping.select_prev_item(cmp_select),
         ["<C-y>"] = cmp.mapping.select_next_item(cmp_select),
+        ["<C-<Up>>"] = cmp.mapping.select_prev_item(cmp_select),
+        ["<C-<Down>>"] = cmp.mapping.select_next_item(cmp_select),
 
         -- scroll hovered docs
-        ['<C-1>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-q>'] = cmp.mapping.scroll_docs(4),
+        ["<C-1>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-q>"] = cmp.mapping.scroll_docs(4),
 
-        -- ignore suggestions
-        ['<C-.>'] = cmp.mapping.abort(),
+        -- dismiss suggestions
+        ["<C-.>"] = cmp.mapping.abort(),
+
+        -- request suggestions
+        ["<C-Space>"] = cmp.mapping.complete(),
 
         -- accept currently highlighted snippet
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    }),
+    enabled = function()
+        -- disable completion in comments
+        local context = require "cmp.config.context"
+        -- keep command mode completion enabled when cursor is in a comment
+        if vim.api.nvim_get_mode().mode == "c" then
+            return true
+        else
+            return not context.in_treesitter_capture("comment") 
+                and not context.in_syntax_group("Comment")
+        end
+    end
+})
 
-        -- complete the currently highlighted snippet
-        ["<C-Space>"] = cmp.mapping.complete(),
-    })
+-- Insert `(` after selecting function or method item
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on(
+    "confirm_done",
+    cmp_autopairs.on_confirm_done()
+)
+
+bufIsBig = function(bufnr)
+    -- determine if a buffer is too big to include as a snippet suggestion source
+	local max_filesize = 50 * 1024 -- 50 KB
+	local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(bufnr))
+    return ok and stats and stats.size > max_filesize
+end
+
+-- If a file is too large, don't add buffer as a cmp source for treesitter
+vim.api.nvim_create_autocmd("BufReadPre", {
+	callback = function(t)
+		local sources = default_cmp_sources
+		if not bufIsBig(t.buf) then
+			sources[#sources+1] = {name = "treesitter", group_index = 2}
+		end
+        cmp.setup.buffer({ sources = sources })
+	end
 })

@@ -46,6 +46,14 @@ return {
     -- these plugins provide some amount of value in my developer workflow.
     -----------------------------------
 
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true
+        -- use opts = {} for passing setup options
+        -- this is equalent to setup({}) function
+    },
+
     -- tree navigation for vim undo branches
     { "mbbill/undotree" },
 
