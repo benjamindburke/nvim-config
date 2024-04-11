@@ -172,21 +172,3 @@ cmp.event:on(
     "confirm_done",
     cmp_autopairs.on_confirm_done()
 )
-
-bufIsBig = function(bufnr)
-    -- determine if a buffer is too big to include as a snippet suggestion source
-	local max_filesize = 50 * 1024 -- 50 KB
-	local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(bufnr))
-    return ok and stats and stats.size > max_filesize
-end
-
--- If a file is too large, don't add buffer as a cmp source for treesitter
-vim.api.nvim_create_autocmd("BufReadPre", {
-	callback = function(t)
-		local sources = default_cmp_sources
-		if not bufIsBig(t.buf) then
-			sources[#sources+1] = {name = "treesitter", group_index = 2}
-		end
-        cmp.setup.buffer({ sources = sources })
-	end
-})
