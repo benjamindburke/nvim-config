@@ -1,3 +1,7 @@
+-----------------------------------
+-- vim motion remappings
+-----------------------------------
+
 -- file directory view
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -77,3 +81,27 @@ vim.keymap.set("n", "<leader>w<Up>", "<C-w>t")
 
 -- create a new horizontal pane
 vim.keymap.set("n", "<leader>wn", vim.cmd.vnew)
+
+-----------------------------------
+-- plugin-specific mappings
+-----------------------------------
+
+-- cellular-automaton.nvim
+-- funzies
+vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+
+-- vim-fugitive.nvim
+-- new horizontal split for Git change tree
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
+-- glow.nvim
+-- render current buffer as markdown in new floating transparent pane
+vim.keymap.set("n", "<leader>mg", vim.cmd.Glow)
+
+-- watch.nvim
+-- open a new vertical pane and populate the :WatchStart command
+vim.keymap.set("n", "<leader>ws", [[:vnew<CR>:WatchStart ]])
+
+-- undotree.nvim
+-- open undo tree terminal ui
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
