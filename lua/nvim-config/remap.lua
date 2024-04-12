@@ -63,11 +63,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- make a file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- convenience - source a file
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
-
 -- navigate to next pane
 vim.keymap.set("n", "<leader>w<Right>", "<C-w>w")
 -- navigate to previous pane
@@ -82,7 +77,7 @@ vim.keymap.set("n", "<leader>w<Up>", "<C-w>t")
 vim.keymap.set("n", "<leader>wn", vim.cmd.vnew)
 
 -- create new vertical pane for a terminal
-vim.keymap.set("n", "<leader>t", [[:vnew<CR>:term<CR><C-w>x<C-w>wi]])
+vim.keymap.set("n", "<leader>tn", [[:80vne<CR>:term<CR><C-w>x<C-w>wi]])
 
 -----------------------------------
 -- plugin-specific mappings
@@ -98,11 +93,11 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
 -- glow.nvim
 -- render current buffer as markdown in new floating transparent pane
-vim.keymap.set("n", "<leader>mg", vim.cmd.Glow)
+vim.keymap.set("n", "<leader>md", vim.cmd.Glow)
 
 -- watch.nvim
 -- open a new vertical pane and populate the :WatchStart command
-vim.keymap.set("n", "<leader>ws", [[:vnew<CR>:WatchStart ]])
+vim.keymap.set("n", "<leader>tw", [[:80vne<CR><C-w>x<C-w>w:WatchStart ]])
 
 -- undotree.nvim
 -- open undo tree terminal ui
