@@ -73,9 +73,6 @@ vim.keymap.set("n", "<leader>w<Down>", "<C-w>b")
 -- navigate to top left pane
 vim.keymap.set("n", "<leader>w<Up>", "<C-w>t")
 
--- create a new vertical pane
-vim.keymap.set("n", "<leader>wn", vim.cmd.vnew)
-
 -- create new vertical pane for a terminal
 vim.keymap.set("n", "<leader>tn", [[:80vne<CR>:term<CR><C-w>x<C-w>wi]])
 
