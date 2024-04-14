@@ -69,6 +69,9 @@ vim.keymap.set("n", "<leader>w<Up>", "<C-w>t")
 -- create new vertical pane for a terminal
 vim.keymap.set("n", "<leader>tn", [[:100vne<CR>:term<CR><C-w>x<C-w>wi]])
 
+-- open new vertical pane to this file
+vim.keymap.set("n", "<leader>remap", [[:sp ~/.config/nvim/lua/nvim-config/remap.lua<CR>]])
+
 -----------------------------------
 -- plugin-specific mappings
 -----------------------------------

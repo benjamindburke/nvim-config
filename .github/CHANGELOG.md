@@ -2,6 +2,10 @@
 
 ## 2024-04-14
 
+Add a remap to open the remappings file in a new horizontal split.
+
+## 2024-04-14
+
 Figure out debugging using nvim-dap. Add keymappings to debug functions.
 
 ## 2024-04-11
