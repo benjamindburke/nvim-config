@@ -145,13 +145,15 @@ cmp.setup({
         ["<C-q>"] = cmp.mapping.scroll_docs(4),
 
         -- dismiss suggestions
-        ["<C-.>"] = cmp.mapping.abort(),
+        ["<Enter>"] = cmp.mapping.abort(),
+        ["<Space>"] = cmp.mapping.abort(),
 
         -- request suggestions
+        ["<C-Enter>"] = cmp.mapping.complete(),
         ["<C-Space>"] = cmp.mapping.complete(),
 
         -- accept currently highlighted snippet
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<Tab>"] = cmp.mapping.confirm({ select = true }),
     }),
     enabled = function()
         -- disable completion in comments
