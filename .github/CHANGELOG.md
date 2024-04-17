@@ -1,5 +1,10 @@
 # Changelog
 
+## 2024-04-17
+
+Use \v very magic regexes and remove <Space> mapping to dismiss cmp snippets.
+<Space> needed to be double spaced between words to enter a raw space char.
+
 ## 2024-04-14
 
 Add a remap to open the remappings file in a new horizontal split.

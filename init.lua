@@ -146,7 +146,6 @@ cmp.setup({
 
         -- dismiss suggestions
         ["<Enter>"] = cmp.mapping.abort(),
-        ["<Space>"] = cmp.mapping.abort(),
 
         -- request suggestions
         ["<C-Enter>"] = cmp.mapping.complete(),
