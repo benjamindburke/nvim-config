@@ -40,6 +40,8 @@ return {
     -- funzies
     { "eandrju/cellular-automaton.nvim" },
 
+    { "tamton-aquib/duck.nvim" },
+
     -----------------------------------
     -- functional plugins
     -- 

@@ -76,13 +76,49 @@ vim.keymap.set("n", "<leader>remap", [[:sp ~/.config/nvim/lua/nvim-config/remap.
 -- plugin-specific mappings
 -----------------------------------
 
+-----------------------------------
+-- fun plugins
+-----------------------------------
+
+-- cellular-automaton.nvim
+-- make text on screen rain as if liquid
+vim.keymap.set("n", "<leader>rain", "<cmd>CellularAutomaton make_it_rain<CR>")
+
+-- duck.nvim
+-- create new duck at 2 steps a second
+vim.keymap.set("n", "<leader>duck", function() require("duck").hatch("🦆", 2) end)
+
+-- create new amogus at 5 steps a second
+vim.keymap.set("n", "<leader>amog5", function() require("duck").hatch("ඞ", 5) end)
+
+-- create new amogus at 10 steps a second
+vim.keymap.set("n", "<leader>amog10", function() require("duck").hatch("ඞ", 10) end)
+
+-- where's waldo
+
+vim.keymap.set("n", "<leader>waldo", function()
+    local duck = require("duck")
+    local count = 30
+    for _ = 1, count, 1
+        do
+            duck.hatch("✨", 5)
+            duck.hatch("✨", 10)
+            duck.hatch("✨", 15)
+            duck.hatch("✨", 20)
+        end
+    duck.hatch("ඞ", 20)
+end)
+
+-- get rid of all spawned creatures
+vim.keymap.set("n", "<leader>duckstop", function() require("duck").cook_all() end)
+
+-----------------------------------
+-- functional plugins
+-----------------------------------
+
 -- watch.nvim
 -- open a new vertical pane and populate the :WatchStart command
 vim.keymap.set("n", "<leader>tw", [[:80vne<CR><C-w>x<C-w>w:WatchStart ]])
-
--- cellular-automaton.nvim
--- funzies
-vim.keymap.set("n", "<leader>rain", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- vim-fugitive.nvim
 -- new horizontal split for Git change tree
@@ -110,10 +146,10 @@ vim.keymap.set("n", "<leader>lp", function()
 end)
 vim.keymap.set("n", "<leader>dr", function() require("dap").repl.open() end)
 vim.keymap.set("n", "<leader>dl", function() require("dap").run_last() end)
-vim.keymap.set({"n", "v"}, "<leader>dh", function()
+vim.keymap.set({ "n", "v" }, "<leader>dh", function()
     require("dap.ui.widgets").hover()
 end)
-vim.keymap.set({"n", "v"}, "<leader>dp", function()
+vim.keymap.set({ "n", "v" }, "<leader>dp", function()
     require("dap.ui.widgets").preview()
 end)
 vim.keymap.set("n", "<leader>df", function()
