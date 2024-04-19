@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-04-19
+
+Add another fun plugin, duck.nvim
+
 ## 2024-04-17
 
 Use \v very magic regexes and remove <Space> mapping to dismiss cmp snippets.
