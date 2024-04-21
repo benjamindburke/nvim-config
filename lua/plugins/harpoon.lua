@@ -1,5 +1,5 @@
 -- harpoon file navigation
-return { 
+return {
     "theprimeagen/harpoon",
     init = function()
         local mark = require("harpoon.mark")

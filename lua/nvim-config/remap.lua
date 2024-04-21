@@ -100,12 +100,12 @@ vim.keymap.set("n", "<leader>waldo", function()
     local duck = require("duck")
     local count = 30
     for _ = 1, count, 1
-        do
-            duck.hatch("✨", 5)
-            duck.hatch("✨", 10)
-            duck.hatch("✨", 15)
-            duck.hatch("✨", 20)
-        end
+    do
+        duck.hatch("✨", 5)
+        duck.hatch("✨", 10)
+        duck.hatch("✨", 15)
+        duck.hatch("✨", 20)
+    end
     duck.hatch("ඞ", 20)
 end)
 

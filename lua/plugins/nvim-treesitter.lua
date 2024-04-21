@@ -27,10 +27,10 @@ return {
                 "lua",
                 "python",
                 "query", -- treesitter query language
-                "rst", -- reStructured Text (python)
+                "rst",   -- reStructured Text (python)
                 "ssh_config",
                 "terraform",
-                "vim", -- treesitter default - vimscript file parsing
+                "vim",    -- treesitter default - vimscript file parsing
                 "vimdoc", -- treesitter default - vimdoc parsing
             },
 

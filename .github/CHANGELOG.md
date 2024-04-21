@@ -1,5 +1,10 @@
 # Changelog
 
+## 2024-04-21
+
+Remove text from suggested snippets
+Use buffer formatter for all Lua files
+
 ## 2024-04-19
 
 Add another fun plugin, duck.nvim

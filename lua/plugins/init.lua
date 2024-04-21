@@ -1,7 +1,7 @@
 return {
     -----------------------------------
     -- cosmetic plugins
-    -- 
+    --
     -- these make my terminal look nice.
     -----------------------------------
 
@@ -44,7 +44,7 @@ return {
 
     -----------------------------------
     -- functional plugins
-    -- 
+    --
     -- these plugins provide some amount of value in my developer workflow.
     -----------------------------------
 

@@ -1,6 +1,6 @@
 require("nvim-config")
 
-local lazypath = vim.fn.stdpath("data").."/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
         "git",
@@ -127,10 +127,17 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup({
     sources = {
         { name = "path" },
-        { name = "nvim_lsp", keyword_length = 3 },
+        {
+            name = "nvim_lsp",
+            keyword_length = 3,
+            entry_filter = function(entry, _ctx)
+                -- remove all text typed suggestions
+                return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
+            end,
+        },
         { name = "nvim_lsp_signature_help", keyword_length = 3 },
         { name = "nvim_lua" },
-        { name = "buffer", keyword_length = 3 },
+        { name = "buffer",                  keyword_length = 3 },
     },
     formatting = lsp_zero.cmp_format({ details = false }),
     mapping = cmp.mapping.preset.insert({
@@ -154,16 +161,17 @@ cmp.setup({
         -- accept currently highlighted snippet
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
     }),
+    view = {
+        docs = { auto_open = true },
+    },
     enabled = function()
         -- disable completion in comments
-        local context = require "cmp.config.context"
+        local context = require("cmp.config.context")
         -- keep command mode completion enabled when cursor is in a comment
-        if vim.api.nvim_get_mode().mode == "c" then
-            return true
-        else
-            return not context.in_treesitter_capture("comment") 
-                and not context.in_syntax_group("Comment")
-        end
+        return (
+            not context.in_treesitter_capture("comment")
+            or not context.in_syntax_group("Comment")
+        )
     end
 })
 
