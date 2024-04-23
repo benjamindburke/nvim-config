@@ -181,3 +181,6 @@ cmp.event:on(
     "confirm_done",
     cmp_autopairs.on_confirm_done()
 )
+
+-- Load DAP
+require("nvim-config.dap")

@@ -1,13 +1,33 @@
 -- configure debug adapters after all other plugins have loaded
 local dap = require("dap")
+local home = os.getenv("HOME")
 
 -- custom debugger symbol text
-vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define(
+    "DapBreakpoint",
+    { text = "🛑", texthl = "", linehl = "", numhl = "" }
+)
+vim.fn.sign_define(
+    "DapBreakpointCondition",
+    { text = "⁉️", texthl = "", linehl = "", numhl = "" }
+)
+vim.fn.sign_define(
+    "DapLogPoint",
+    { text = "🪵", texthl = "", linehl = "", numhl = "" }
+)
+vim.fn.sign_define(
+    "DapStopped",
+    { text = "►", texthl = "", linehl = "", numhl = "" }
+)
+vim.fn.sign_define(
+    "DapBreakpointRejected",
+    { text = "☢️", texthl = "", linehl = "", numhl = "" }
+)
 
 -- Elixir debugger configuration
 dap.adapters.mix_task = {
     type = "executable",
-    command = "~/.local/share/nvim/mason/bin/elixir-ls",
+    command = home .. "/.local/share/nvim/mason/bin/elixir-ls",
     args = {},
 }
 
@@ -32,7 +52,7 @@ dap.adapters.delve = {
     type = "server",
     port = "${port}",
     executable = {
-        command = "~/.local/share/nvim/mason/bin/dlv",
+        command = home .. "/.local/share/nvim/mason/bin/dlv",
         args = { "dap", "-l", "127.0.0.1:${port}" },
     }
 }
@@ -61,7 +81,7 @@ dap.configurations.go = {
 }
 
 -- Python debugger configuration
-local debugpy_python = "~/.config/nvim/venv/bin/python"
+local debugpy_python = home .. "/.config/nvim/venv/bin/python"
 
 dap.adapters.python = function(cb, config)
     if config.request == "attach" then
