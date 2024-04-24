@@ -70,4 +70,7 @@ return {
 
     -- debugging adapter protocol (DAP)
     { "mfussenegger/nvim-dap", main = "dap", name = "dap" },
+
+    -- python debugger
+    { "mfussenegger/nvim-dap-python", main = "dap-python", name = "dap-python" },
 }

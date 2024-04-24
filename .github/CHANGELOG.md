@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-04-24
+
+nvim-dap-python works with Tornado applications!
+
 ## 2024-04-21
 
 Remove text from suggested snippets
