@@ -57,7 +57,7 @@ return {
         integrations = {
             cmp = true,
             gitsigns = true,
-            harpoon = false,
+            harpoon = true, 
             indent_blankline = true,
             notify = false,
             nvimtree = true,
