@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-04-26
+
+Swap to harpoon branch `harpoon2` to support marks per repo branch + cwd
+
 ## 2024-04-24
 
 nvim-dap-python works with Tornado applications!

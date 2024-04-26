@@ -47,6 +47,20 @@ return {
     -- these plugins provide some amount of value in my developer workflow.
     -----------------------------------
 
+    -- dependency for many plugins
+    { "nvim-lua/plenary.nvim", lazy = false },
+
+    -- quick file navigations
+    {
+        "theprimeagen/harpoon",
+        name = "harpoon",
+        main = "harpoon",
+        branch = "harpoon2",
+        lazy = false,
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
+
+    -- automatically create pairs of "", (), {}, []
     { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
     -- tree navigation for vim undo branches
