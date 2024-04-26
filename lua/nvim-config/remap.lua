@@ -7,9 +7,9 @@ vim.keymap.set("n", "<leader><leader>", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>ls", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>dir", vim.cmd.Ex)
 
--- in visual mode, select text and then hold Shift+J to move text up
+-- in visual mode, select lines and then hold Shift+J to move lines up
 vim.keymap.set("v", "J", ":m '<-2<CR>gv=gv")
--- in visual mode, select text and then hold Shift+K to move text down
+-- in visual mode, select lines and then hold Shift+K to move lines down
 vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv")
 
 -- navigate between symbols - jump out of definition (pop tag from stack)
