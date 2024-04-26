@@ -2,6 +2,10 @@
 
 ## 2024-04-26
 
+Attempt to use project's flake8 for ignoring warnings/errors
+
+## 2024-04-26
+
 Swap to harpoon branch `harpoon2` to support marks per repo branch + cwd
 
 ## 2024-04-24
