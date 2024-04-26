@@ -37,9 +37,9 @@ return {
     },
 
     -- funzies
-    { "eandrju/cellular-automaton.nvim", lazy = true },
+    { "eandrju/cellular-automaton.nvim",     lazy = true },
 
-    { "tamton-aquib/duck.nvim", lazy = true },
+    { "tamton-aquib/duck.nvim",              lazy = true },
 
     -----------------------------------
     -- functional plugins
@@ -48,7 +48,7 @@ return {
     -----------------------------------
 
     -- dependency for many plugins
-    { "nvim-lua/plenary.nvim", lazy = false },
+    { "nvim-lua/plenary.nvim",               lazy = false },
 
     -- quick file navigations
     {
@@ -61,16 +61,16 @@ return {
     },
 
     -- automatically create pairs of "", (), {}, []
-    { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+    { "windwp/nvim-autopairs",      event = "InsertEnter", config = true },
 
     -- tree navigation for vim undo branches
     { "mbbill/undotree" },
 
     -- git plugin
-    { "tpope/vim-fugitive", lazy = true },
+    { "tpope/vim-fugitive",         lazy = true },
 
     -- command output watcher
-    { "Makaze/watch.nvim", lazy = true },
+    { "Makaze/watch.nvim",          lazy = true },
 
     -- treesitter playground
     { "nvim-treesitter/playground", lazy = true },
@@ -83,7 +83,7 @@ return {
     },
 
     -- debugging adapter protocol (DAP)
-    { "mfussenegger/nvim-dap", main = "dap", name = "dap" },
+    { "mfussenegger/nvim-dap",        main = "dap",        name = "dap" },
 
     -- python debugger
     { "mfussenegger/nvim-dap-python", main = "dap-python", name = "dap-python" },

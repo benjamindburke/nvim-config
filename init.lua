@@ -142,14 +142,12 @@ cmp.setup({
     formatting = lsp_zero.cmp_format({ details = false }),
     mapping = cmp.mapping.preset.insert({
         -- traverse suggested snippets
-        ["<C-j>"] = cmp.mapping.select_prev_item(cmp_select),
-        ["<C-y>"] = cmp.mapping.select_next_item(cmp_select),
         ["<C-<Up>>"] = cmp.mapping.select_prev_item(cmp_select),
         ["<C-<Down>>"] = cmp.mapping.select_next_item(cmp_select),
 
         -- scroll hovered docs
-        ["<C-1>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-q>"] = cmp.mapping.scroll_docs(4),
+        ["<C-j>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-y>"] = cmp.mapping.scroll_docs(4),
 
         -- dismiss suggestions
         ["<Enter>"] = cmp.mapping.abort(),
