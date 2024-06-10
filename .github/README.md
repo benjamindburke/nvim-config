@@ -9,9 +9,9 @@ Clone repository to `~/.config/nvim/`.
 ## Workman vs Qwerty vs Dvorak
 
 I type using the Workman keyboard layout. I also type on a fully reprogrammable 60%
-split ergonomic mechanical keyboard [shameless
-https://uhk.io plug. I highly HIGHLY recommend the wrist rests, key cluster and
-trackpad addons for the best developer experience.](https://ultimatehackingkeyboard.com/product/uhk60v2) 
+split ergonomic mechanical keyboard [shameless https://uhk.io plug. I highly HIGHLY
+recommend the wrist rests, key cluster and trackpad addons for the best developer
+experience.](https://ultimatehackingkeyboard.com/product/uhk60v2) 
 
 Considering I don't type Qwerty OR Dvorak, and multiple layers, I've made some
 navigation changes to suit my home row of `ASHTGYNEOI'`.

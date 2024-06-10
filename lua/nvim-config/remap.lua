@@ -39,6 +39,23 @@ vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 -- never press capital Q
 vim.keymap.set("n", "Q", "<nop>")
 
+-- This function opens the URL nearest to the cursor in the default browser
+vim.keymap.set("n", "gx", function()
+    -- Get the current line and column
+    local line = vim.fn.getline(".")
+    local col = vim.fn.col(".")
+
+    -- Extract the URL nearest to the cursor
+    local escaped_line = vim.fn.shellescape(line)
+    local command = "extract_nearest_url " .. escaped_line .. " " .. col
+    local cleaned_url = vim.fn.system(command)
+
+    -- If a URL has been found, open it in default browser
+    if (cleaned_url ~= "") then
+        vim.cmd("!open " .. vim.fn.fnameescape(cleaned_url))
+    end
+end)
+
 -- format code if lsp is capable of formatting
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
@@ -95,7 +112,6 @@ vim.keymap.set("n", "<leader>amog5", function() require("duck").hatch("ඞ", 5) 
 vim.keymap.set("n", "<leader>amog10", function() require("duck").hatch("ඞ", 10) end)
 
 -- where's waldo
-
 vim.keymap.set("n", "<leader>waldo", function()
     local duck = require("duck")
     local count = 30
