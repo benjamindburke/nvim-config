@@ -2,6 +2,10 @@
 
 Feel free to rip out anything want.
 
+## Installation
+
+Clone repository to `~/.config/nvim/`.
+
 ## Workman vs Qwerty vs Dvorak
 
 I type using the Workman keyboard layout. I also type on a fully reprogrammable 60%
