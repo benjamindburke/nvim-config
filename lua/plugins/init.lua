@@ -67,7 +67,7 @@ return {
     { "mbbill/undotree" },
 
     -- git plugin
-    { "tpope/vim-fugitive",         lazy = true },
+    { "tpope/vim-fugitive",         lazy = false },
 
     -- command output watcher
     { "Makaze/watch.nvim",          lazy = true },
