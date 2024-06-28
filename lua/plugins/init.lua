@@ -1,5 +1,44 @@
 return {
     -----------------------------------
+    -- dependencies
+    --
+    -- lazy loading deps instead of listing as dependencies
+    -- improves startup times
+    -----------------------------------
+
+    { "nvim-tree/nvim-web-devicons",         lazy = true },
+
+    { "nvim-lua/plenary.nvim",               lazy = true },
+
+    { "neovim/nvim-lspconfig",               lazy = true },
+
+    { "SmiteshP/nvim-navic",                 lazy = true },
+
+    { "MunifTanjim/nui.nvim",                lazy = true },
+
+    -- LSP support
+
+    { "neovim/nvim-lspconfig",               lazy = true },
+
+    { "williamboman/mason.nvim",             lazy = true },
+
+    { "williamboman/mason-lspconfig.nvim",   lazy = true },
+
+    -- Autocompletion
+
+    { "hrsh7th/nvim-cmp",                    lazy = true },
+
+    { "hrsh7th/cmp-nvim-lsp",                lazy = true },
+
+    { "hrsh7th/cmp-buffer",                  lazy = true },
+
+    { "hrsh7th/cmp-path",                    lazy = true },
+
+    { "hrsh7th/cmp-nvim-lua",                lazy = true },
+
+    { "rafamadriz/friendly-snippets",        lazy = true },
+
+    -----------------------------------
     -- cosmetic plugins
     --
     -- these make my terminal look nice.
@@ -11,9 +50,6 @@ return {
     -- lua-based status bar at bottom of buffers
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = {
-            { "nvim-tree/nvim-web-devicons", lazy = false },
-        },
         opts = { options = { theme = "moonfly" } },
     },
 
@@ -37,9 +73,9 @@ return {
     },
 
     -- funzies
-    { "eandrju/cellular-automaton.nvim",     lazy = true },
+    { "eandrju/cellular-automaton.nvim", lazy = true },
 
-    { "tamton-aquib/duck.nvim",              lazy = true },
+    { "tamton-aquib/duck.nvim",          lazy = true },
 
     -----------------------------------
     -- functional plugins
@@ -47,8 +83,12 @@ return {
     -- these plugins provide some amount of value in my developer workflow.
     -----------------------------------
 
-    -- dependency for many plugins
-    { "nvim-lua/plenary.nvim",               lazy = false },
+    -- language server protocol support
+    {
+        "vonheikemen/lsp-zero.nvim",
+        version = "v3.x",
+        lazy = false,
+    },
 
     -- quick file navigations
     {
@@ -57,7 +97,6 @@ return {
         main = "harpoon",
         branch = "harpoon2",
         lazy = false,
-        dependencies = { "nvim-lua/plenary.nvim" },
     },
 
     -- automatically create pairs of "", (), {}, []
@@ -78,7 +117,6 @@ return {
     -- language server symbol provider
     {
         "SmiteshP/nvim-navic",
-        dependencies = { "neovim/nvim-lspconfig" },
         opts = { lsp = { auto_attach = true } },
     },
 
