@@ -1,2 +1,2 @@
-require("nvim-config.set")
+require("nvim-config.setopts")
 require("nvim-config.remap")
