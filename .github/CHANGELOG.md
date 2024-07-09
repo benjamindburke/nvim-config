@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-07-09
+
+Fix warning for lsp-zero-extend-lspconfig
+
 ## 2024-04-26
 
 Attempt to use project's flake8 for ignoring warnings/errors
