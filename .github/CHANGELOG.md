@@ -2,6 +2,11 @@
 
 ## 2024-07-09
 
+Fix lazy-load dependency commands not running when called
+Tweak keybinds to be more consistent/next to each other on Workman layout (: ; i)
+
+## 2024-07-09
+
 Fix warning for lsp-zero-extend-lspconfig
 
 ## 2024-04-26
