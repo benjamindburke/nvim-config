@@ -51,6 +51,8 @@ require("ibl").setup { indent = { highlight = highlight } }
 vim.cmd.TSUpdate()
 
 local lsp_zero = require("lsp-zero")
+lsp_zero.extend_lspconfig()
+
 local navic = require("nvim-navic")
 
 -- configure lsps to attach to buffers
