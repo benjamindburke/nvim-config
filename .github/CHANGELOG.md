@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-07-10
+
+Fixed keybind harpoon mark 4th file 
+
 ## 2024-07-09
 
 Fix lazy-load dependency commands not running when called
