@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-07-12
+
+Add LuaSnip suggestion dependency for editing nvim config
+
 ## 2024-07-10
 
 Fixed keybind harpoon mark 4th file 

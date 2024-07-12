@@ -98,7 +98,6 @@ require("mason-lspconfig").setup({
         "bashls",
         "dockerls",
         "docker_compose_language_service",
-        "gopls",
         "elixirls",
         "elmls",
         "elp", -- Erlang Language Platform

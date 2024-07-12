@@ -6,13 +6,15 @@ return {
     -- improves startup times
     -----------------------------------
 
-    { "nvim-tree/nvim-web-devicons",         lazy = true },
+    { "nvim-tree/nvim-web-devicons", lazy = true },
 
-    { "nvim-lua/plenary.nvim",               lazy = true },
+    { "nvim-lua/plenary.nvim",       lazy = true },
 
-    { "neovim/nvim-lspconfig",               lazy = true },
-
-    { "SmiteshP/nvim-navic",                 lazy = true },
+    {
+        "SmiteshP/nvim-navic",
+        lazy = true,
+        opts = { lsp = { auto_attach = true } },
+    },
 
     { "MunifTanjim/nui.nvim",                lazy = true },
 
@@ -37,6 +39,8 @@ return {
     { "hrsh7th/cmp-nvim-lua",                lazy = true },
 
     { "rafamadriz/friendly-snippets",        lazy = true },
+
+    { "L3MON4D3/LuaSnip",                    lazy = true },
 
     -----------------------------------
     -- cosmetic plugins
@@ -100,29 +104,23 @@ return {
     },
 
     -- automatically create pairs of "", (), {}, []
-    { "windwp/nvim-autopairs",      event = "InsertEnter", config = true },
+    { "windwp/nvim-autopairs",        event = "InsertEnter", config = true },
 
     -- tree navigation for vim undo branches
     { "mbbill/undotree" },
 
     -- git plugin
-    { "tpope/vim-fugitive",         lazy = false },
+    { "tpope/vim-fugitive" },
 
     -- command output watcher
-    { "Makaze/watch.nvim",          lazy = true },
+    { "Makaze/watch.nvim" },
 
     -- treesitter playground
-    { "nvim-treesitter/playground", lazy = true },
-
-    -- language server symbol provider
-    {
-        "SmiteshP/nvim-navic",
-        opts = { lsp = { auto_attach = true } },
-    },
+    { "nvim-treesitter/playground",   lazy = true },
 
     -- debugging adapter protocol (DAP)
-    { "mfussenegger/nvim-dap",        main = "dap",        name = "dap" },
+    { "mfussenegger/nvim-dap",        main = "dap",          name = "dap" },
 
     -- python debugger
-    { "mfussenegger/nvim-dap-python", main = "dap-python", name = "dap-python" },
+    { "mfussenegger/nvim-dap-python", main = "dap-python",   name = "dap-python" },
 }
