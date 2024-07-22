@@ -1,7 +1,7 @@
 -- suggest more efficient vim motions
 return {
     "m4xshen/hardtime.nvim",
-    lazy = true,
+    lazy = false,
     opts = {
         disabled_keys = {
             -- allow Up/Down/Left/Right instead of forcing hjkl (UHK support)

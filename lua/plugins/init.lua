@@ -1,9 +1,8 @@
 return {
     -----------------------------------
-    -- dependencies
+    -- Dependencies
     --
-    -- lazy loading deps instead of listing as dependencies
-    -- improves startup times
+    -- lazy loading deps instead of listing as dependencies improves startup times
     -----------------------------------
 
     { "nvim-tree/nvim-web-devicons", lazy = true },
@@ -18,35 +17,20 @@ return {
 
     { "MunifTanjim/nui.nvim",                lazy = true },
 
-    -- LSP support
-
-    { "neovim/nvim-lspconfig",               lazy = true },
-
-    { "williamboman/mason.nvim",             lazy = true },
-
-    { "williamboman/mason-lspconfig.nvim",   lazy = true },
-
-    -- Autocompletion
-
-    { "hrsh7th/nvim-cmp",                    lazy = true },
-
-    { "hrsh7th/cmp-nvim-lsp",                lazy = true },
-
-    { "hrsh7th/cmp-buffer",                  lazy = true },
-
-    { "hrsh7th/cmp-path",                    lazy = true },
-
-    { "hrsh7th/cmp-nvim-lua",                lazy = true },
-
-    { "rafamadriz/friendly-snippets",        lazy = true },
-
-    { "L3MON4D3/LuaSnip",                    lazy = true },
-
     -----------------------------------
-    -- cosmetic plugins
+    -- Cosmetic plugins
     --
     -- these make my terminal look nice.
     -----------------------------------
+
+    -- sakura color theme
+    {
+        "voxelprismatic/sakurapine",
+        as = "rose-pine",
+        name = "rose-pine",
+        priority = 1000,
+        opts = { swatch = "sakura" },
+    },
 
     -- indentation lines with multiple color support
     { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
@@ -54,7 +38,7 @@ return {
     -- lua-based status bar at bottom of buffers
     {
         "nvim-lualine/lualine.nvim",
-        opts = { options = { theme = "moonfly" } },
+        opts = { options = { theme = "auto" } },
     },
 
     -- use openai to generate colorschemes from words
@@ -69,29 +53,63 @@ return {
         },
     },
 
+    -----------------------------------
+    -- Fun plugins
+    --
+    -- for personal entertainment between tasks
+    -----------------------------------
+
+    -- create chaos in a file by treating letters and symbols as cellular automata
+    { "eandrju/cellular-automaton.nvim",   lazy = true },
+
+    -- animated ducks that move across open buffers
+    { "tamton-aquib/duck.nvim",            lazy = true },
+
+    -----------------------------------
+    -- Language Server Protocol (LSP) support
+    --
+    -- language server protocol symbol providers / installation helpers
+    -----------------------------------
+
+    { "neovim/nvim-lspconfig",             lazy = true },
+
+    { "williamboman/mason.nvim",           lazy = true },
+
+    { "williamboman/mason-lspconfig.nvim", lazy = true },
+
+    { "vonheikemen/lsp-zero.nvim",         version = "v3.x" },
+
+    -----------------------------------
+    -- Autocompletion
+    --
+    -- snippet providers from configured LSPs
+    -----------------------------------
+
+    { "hrsh7th/nvim-cmp" },
+
+    { "hrsh7th/cmp-nvim-lsp" },
+
+    { "hrsh7th/cmp-buffer" },
+
+    { "hrsh7th/cmp-path" },
+
+    { "hrsh7th/cmp-nvim-lua" },
+
+    { "rafamadriz/friendly-snippets" },
+
+    { "L3MON4D3/LuaSnip" },
+
+    -----------------------------------
+    -- Functional plugins
+    --
+    -- these plugins provide some amount of value in my developer workflow.
+    -----------------------------------
+
     -- render markdown in transparent terminal pane
     {
         "ellisonleao/glow.nvim",
         opts = { style = "dark" },
         lazy = true,
-    },
-
-    -- funzies
-    { "eandrju/cellular-automaton.nvim", lazy = true },
-
-    { "tamton-aquib/duck.nvim",          lazy = true },
-
-    -----------------------------------
-    -- functional plugins
-    --
-    -- these plugins provide some amount of value in my developer workflow.
-    -----------------------------------
-
-    -- language server protocol support
-    {
-        "vonheikemen/lsp-zero.nvim",
-        version = "v3.x",
-        lazy = false,
     },
 
     -- quick file navigations
@@ -117,6 +135,12 @@ return {
 
     -- treesitter playground
     { "nvim-treesitter/playground",   lazy = true },
+
+    -----------------------------------
+    -- Debugger Adapter Protocols (DAP)
+    --
+    -- provide breakpoint debugging support completely within Nvim
+    -----------------------------------
 
     -- debugging adapter protocol (DAP)
     { "mfussenegger/nvim-dap",        main = "dap",          name = "dap" },
