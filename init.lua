@@ -20,7 +20,7 @@ require("lazy").setup("plugins")
 -- autoloading all plugins
 ------------------------
 
-vim.cmd.colorscheme "catppuccin-mocha"
+vim.cmd.colorscheme "rose-pine-moon"
 
 local highlight = {
     "RainbowRed",

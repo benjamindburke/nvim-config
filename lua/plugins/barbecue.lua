@@ -4,13 +4,12 @@ return {
     name = "barbecue",
     version = "*",
     dependencies = {
-        -- listing catppuccin as a dependency ensures barbecue loads after catppuccin
-        "catppuccin/nvim",
+        -- listing sakurapine as a dependency ensures barbecue loads afterwards
+        "voxelprismatic/sakurapine",
     },
     opts = {
         -- prevent barbecue from updating itself automatically
         create_autocmd = false,
-        theme = "catppuccin-mocha",
     },
     init = function()
         vim.api.nvim_create_autocmd(

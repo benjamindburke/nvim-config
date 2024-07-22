@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-07-22
+
+Replace catppuccin colorscheme with sakurapine
+
 ## 2024-07-12
 
 Add LuaSnip suggestion dependency for editing nvim config
