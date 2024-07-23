@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-07-23
+
+Ensure nerd font support with vim.g.have_nerd_font = true
+
 ## 2024-07-22
 
 Replace catppuccin colorscheme with sakurapine
