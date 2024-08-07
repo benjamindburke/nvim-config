@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-08-07
+
+If source file is python, run black formatter instead of vim.lsp.buf.format()
+
 ## 2024-07-23
 
 Ensure nerd font support with vim.g.have_nerd_font = true

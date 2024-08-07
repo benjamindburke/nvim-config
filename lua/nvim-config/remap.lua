@@ -13,9 +13,9 @@ vim.keymap.set("n", "<leader><leader>", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>ls", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>dir", vim.cmd.Ex)
 
--- in visual mode, select lines and then hold Shift+J to move lines up
+-- in visual mode, select lines and then hold `:` to move lines up
 vim.keymap.set("v", ":", ":m '<-2<CR>gv=gv")
--- in visual mode, select lines and then hold Shift+Y to move lines down
+-- in visual mode, select lines and then hold `I` to move lines down
 vim.keymap.set("v", "I", ":m '>+1<CR>gv=gv")
 
 -- navigate between symbols - jump out of definition (pop tag from stack)
@@ -68,7 +68,11 @@ end)
 
 -- format code if lsp is capable of formatting
 vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format()
+    if (vim.bo.filetype == "python") then
+        vim.cmd("!black %")
+    else
+        vim.lsp.buf.format()
+    end
 end)
 
 -- quick fix navigation
