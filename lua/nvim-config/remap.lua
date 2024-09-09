@@ -155,6 +155,29 @@ end)
 -- open undo tree terminal ui
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
+-- no-neck-pain.nvim
+-- toggle no neck pain mode
+vim.keymap.set({ "n", "v" }, "<leader>zz", function()
+    require("no-neck-pain")
+    vim.cmd.NoNeckPain()
+end)
+
+-- no-neck-pain.nvim
+-- add width to no neck pain mode
+vim.keymap.set({ "n", "v" }, "<leader>z=", function()
+    require("no-neck-pain")
+    local current_width = vim.api.nvim_win_get_width(0)
+    vim.cmd.NoNeckPainResize(current_width + 20)
+end)
+
+-- no-neck-pain.nvim
+-- subtract width to no neck pain mode
+vim.keymap.set({ "n", "v" }, "<leader>z-", function()
+    require("no-neck-pain")
+    local current_width = vim.api.nvim_win_get_width(0)
+    vim.cmd.NoNeckPainResize(current_width - 20)
+end)
+
 -- nvim-dap.nvim
 -- debug adapter protocol breakpoints and step-through mappings
 vim.keymap.set("n", "<F5>", function() require("dap").continue() end)
