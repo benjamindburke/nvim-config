@@ -1,5 +1,13 @@
 # Changelog
 
+## 2024-09-09
+
+Sign every commit in history with GPG key; side effect, destroy original commited date for all commits
+
+## 2024-09-09
+
+Add no-neck-pain.nvim plugin
+
 ## 2024-08-07
 
 If source file is python, run black formatter instead of vim.lsp.buf.format()
