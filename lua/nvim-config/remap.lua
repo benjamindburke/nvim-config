@@ -178,6 +178,13 @@ vim.keymap.set({ "n", "v" }, "<leader>z-", function()
     vim.cmd.NoNeckPainResize(current_width - 20)
 end)
 
+-- vi-mongo.nvim
+-- enable the mongo TUI
+vim.keymap.set({ "n" }, "<leader>vm", function()
+    require("vi-mongo")
+    vim.cmd.ViMongo()
+end)
+
 -- nvim-dap.nvim
 -- debug adapter protocol breakpoints and step-through mappings
 vim.keymap.set("n", "<F5>", function() require("dap").continue() end)

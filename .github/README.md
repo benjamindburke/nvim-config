@@ -41,6 +41,8 @@ So despite not using Qwerty, I don't find the need to remap hjkl at all!
 
 This configuration relies on:
 1. npm (required to install some LSPs)
+1. rust (required to install some LSPs)
+1. vi-mongo (required for mongo TUI usage)
 1. Nerd Font (required to render LSP symbols)
    - The specific font I use is [GoMono Nerd Font](https://www.programmingfonts.org/#go-mono)
    - https://www.nerdfonts.com/font-downloads

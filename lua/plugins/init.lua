@@ -139,6 +139,9 @@ return {
     -- create evenly-spaced centered buffers with a toggle
     { "shortcuts/no-neck-pain.nvim",  lazy = true },
 
+    -- mongoDB TUI application
+    { "kopecmaciej/vi-mongo.nvim",    lazy = true },
+
     -----------------------------------
     -- Debugger Adapter Protocols (DAP)
     --
