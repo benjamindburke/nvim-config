@@ -2,6 +2,10 @@
 
 ## 2024-11-01
 
+Automatically remap sh file types to bash for bashls support
+
+## 2024-11-01
+
 Fix bug <cmd> requires <CR> at the end
 
 ## 2024-11-01

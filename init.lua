@@ -115,6 +115,20 @@ require("mason-lspconfig").setup({
         function(server_name)
             require("lspconfig")[server_name].setup({})
         end,
+        bashls = function()
+            require("lspconfig").bashls.setup({})
+            vim.api.nvim_create_autocmd(
+                { "BufEnter", "BufWinEnter" },
+                {
+                    group = vim.api.nvim_create_augroup("bashls.filetype", {}),
+                    callback = function()
+                        if (vim.bo.filetype == "sh") then
+                            vim.bo.filetype = "bash"
+                        end
+                    end,
+                }
+            )
+        end,
         lua_ls = function()
             local lua_opts = lsp_zero.nvim_lua_ls()
             require("lspconfig").lua_ls.setup(lua_opts)
