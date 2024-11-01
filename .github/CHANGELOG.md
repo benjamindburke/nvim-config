@@ -2,6 +2,10 @@
 
 ## 2024-11-01
 
+Fix bug <cmd> requires <CR> at the end
+
+## 2024-11-01
+
 Configure lazy loading on key maps and on nvim events
 
 ## 2024-09-09
