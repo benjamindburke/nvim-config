@@ -1,8 +1,10 @@
 -- breadcrumb symbol navigation like vscode
 return {
     "utilyre/barbecue.nvim",
-    name = "barbecue",
+    name    = "barbecue",
     version = "*",
+    lazy    = true,
+    event   = { "BufReadPre", "BufNewFile", "ColorScheme" },
     dependencies = {
         -- listing sakurapine as a dependency ensures barbecue loads afterwards
         "voxelprismatic/sakurapine",
