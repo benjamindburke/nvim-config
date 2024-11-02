@@ -1,19 +1,19 @@
 -- breadcrumb symbol navigation like vscode
 return {
     "utilyre/barbecue.nvim",
-    name    = "barbecue",
-    version = "*",
-    lazy    = true,
-    event   = { "BufReadPre", "BufNewFile", "ColorScheme" },
+    name         = "barbecue",
+    version      = "*",
+    lazy         = true,
+    event        = { "BufReadPre", "BufNewFile", "UIEnter" },
     dependencies = {
         -- listing sakurapine as a dependency ensures barbecue loads afterwards
         "voxelprismatic/sakurapine",
     },
-    opts = {
+    opts         = {
         -- prevent barbecue from updating itself automatically
         create_autocmd = false,
     },
-    init = function()
+    init         = function()
         vim.api.nvim_create_autocmd(
             {
                 "WinScrolled",

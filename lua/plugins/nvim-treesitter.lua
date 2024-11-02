@@ -1,7 +1,9 @@
 -- treesitter parsing
 return {
     "nvim-treesitter/nvim-treesitter",
-    config = function()
+    lazy   = true,
+    event  = { "FileType" },
+    build  = function()
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
                 "bash",
@@ -51,5 +53,9 @@ return {
                 additional_vim_regex_highlighting = false,
             },
         })
+    end,
+    config = function(_, opts)
+        vim.cmd.TSUpdate()
+        require("nvim-treesitter").setup(opts)
     end,
 }

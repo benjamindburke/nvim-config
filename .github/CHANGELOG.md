@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-11-02
+
+Move plugin config from init.lua to load-time config callbacks
+
 ## 2024-11-01
 
 Automatically remap sh file types to bash for bashls support
