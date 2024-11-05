@@ -66,15 +66,6 @@ vim.keymap.set("n", "gx", function()
     end
 end)
 
--- format code if lsp is capable of formatting
-vim.keymap.set("n", "<leader>f", function()
-    if (vim.bo.filetype == "python") then
-        vim.cmd("!black %")
-    else
-        vim.lsp.buf.format()
-    end
-end)
-
 -- quick fix navigation
 vim.keymap.set("n", "<C-i>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-;>", "<cmd>cprev<CR>zz")

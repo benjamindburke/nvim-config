@@ -1,4 +1,18 @@
 return function (opts)
+    -- format code if lsp is capable of formatting
+    vim.keymap.set(
+        "n",
+        "<leader>f",
+        function()
+            if (vim.bo.filetype == "python") then
+                vim.cmd("!black %")
+            else
+                vim.lsp.buf.format()
+            end
+        end,
+        opts
+    )
+
     -- go to definition
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 

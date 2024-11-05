@@ -2,12 +2,12 @@ return {
     "vonheikemen/lsp-zero.nvim",
     version      = "v3.x",
     lazy         = true,
-    event        = { "FileType" },
+    event        = { "VimEnter" },
     dependencies = {
         "neovim/nvim-lspconfig",
         "SmiteshP/nvim-navic",
     },
-    config       = function()
+    init         = function()
         local plugin = require("lsp-zero")
         plugin.extend_lspconfig()
         local navic = require("nvim-navic")

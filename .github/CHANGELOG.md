@@ -2,6 +2,10 @@
 
 ## 2024-11-05
 
+Change load event for lsps so formatting works using \<leader\>f
+
+## 2024-11-05
+
 Continue refactoring keymap configs and lazy loading
 
 ## 2024-11-02
