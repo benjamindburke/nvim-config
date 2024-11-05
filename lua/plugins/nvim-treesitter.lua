@@ -1,9 +1,9 @@
 -- treesitter parsing
 return {
     "nvim-treesitter/nvim-treesitter",
-    lazy   = true,
-    event  = { "FileType" },
-    build  = function()
+    lazy  = true,
+    event = { "FileType" },
+    build = function()
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
                 "bash",

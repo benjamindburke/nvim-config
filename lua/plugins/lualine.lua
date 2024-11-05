@@ -1,7 +1,7 @@
 return {
     "nvim-lualine/lualine.nvim",
     lazy         = true,
-    event        = { "UIEnter" },
+    event        = { "VeryLazy" },
     opts         = { options = { theme = "auto" } },
     dependencies = { "voxelprismatic/sakurapine" },
 }

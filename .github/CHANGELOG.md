@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-11-05
+
+Continue refactoring keymap configs and lazy loading
+
 ## 2024-11-02
 
 Move plugin config from init.lua to load-time config callbacks

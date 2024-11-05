@@ -90,42 +90,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- open new vertical pane to this file
 vim.keymap.set("n", "<leader>remap", [[:sp ~/.config/nvim/lua/nvim-config/remap.lua<CR>]])
 
------------------------------------
--- plugin-specific mappings
------------------------------------
+-- line duplications
+vim.keymap.set("n", "<M-Down>", [[:t.<CR>]], { desc = "Duplicate a line below the current line" })
+vim.keymap.set("n", "<M-Up>", [[:t.<CR>v:<Esc>k]], { desc = "Duplicate a line above the current line" })
 
------------------------------------
--- functional plugins
------------------------------------
-
--- nvim-dap.nvim
--- debug adapter protocol breakpoints and step-through mappings
-vim.keymap.set("n", "<F5>", function() require("dap").continue() end)
-vim.keymap.set("n", "<F10>", function() require("dap").step_over() end)
-vim.keymap.set("n", "<F11>", function() require("dap").step_into() end)
-vim.keymap.set("n", "<F12>", function() require("dap").step_out() end)
-vim.keymap.set("n", "<leader>b", function() require("dap").toggle_breakpoint() end)
-vim.keymap.set("n", "<leader>B", function() require("dap").set_breakpoint() end)
-vim.keymap.set("n", "<leader>Be", function() require("dap").set_exception_breakpoints() end)
-vim.keymap.set("n", "<leader>lp", function()
-    require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
-end)
-vim.keymap.set("n", "<leader>dr", function() require("dap").repl.open() end)
-vim.keymap.set("n", "<leader>dl", function() require("dap").run_last() end)
-vim.keymap.set({ "n", "v" }, "<leader>dh", function()
-    require("dap.ui.widgets").hover()
-end)
-vim.keymap.set({ "n", "v" }, "<leader>dp", function()
-    require("dap.ui.widgets").preview()
-end)
-vim.keymap.set("n", "<leader>df", function()
-    local widgets = require("dap.ui.widgets")
-    widgets.centered_float(widgets.frames)
-end)
-vim.keymap.set("n", "<leader>ds", function()
-    local widgets = require("dap.ui.widgets")
-    widgets.centered_float(widgets.scopes)
-end)
-vim.keymap.set("n", "<leader>dt", function() require("dap").terminate() end)
-vim.keymap.set("n", "<leader>dc", function() require("dap").clear_breakpoints() end)
-vim.keymap.set("n", "<leader>d?", function() require("dap").list_breakpoints() end)
+-- toggle fold regions
+vim.keymap.set({ "n", "v" }, "<M-f>", "za", { desc = "Toggle fold regions" })

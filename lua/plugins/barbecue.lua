@@ -4,7 +4,7 @@ return {
     name         = "barbecue",
     version      = "*",
     lazy         = true,
-    event        = { "BufReadPre", "BufNewFile", "UIEnter" },
+    event        = { "BufReadPre", "BufNewFile" },
     dependencies = {
         -- listing sakurapine as a dependency ensures barbecue loads afterwards
         "voxelprismatic/sakurapine",

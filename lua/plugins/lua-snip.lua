@@ -3,5 +3,5 @@ return {
     lazy  = true,
     main  = "lua-snip",
     name  = "lua-snip",
-    event = { "BufReadPre", "BufNewFile" },
+    ft = "lua",
 }

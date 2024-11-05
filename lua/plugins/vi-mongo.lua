@@ -1,5 +1,5 @@
 return {
     "kopecmaciej/vi-mongo.nvim",
-    lazy  = true,
+    lazy = true,
     keys = require("nvim-config.keys.vi-mongo"),
 }

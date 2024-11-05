@@ -7,7 +7,7 @@ return {
         "williamboman/mason.nvim",
         "vonheikemen/lsp-zero.nvim",
     },
-    config       = function()
+    build        = function()
         local lspconfig = require("lspconfig")
         local lsp_zero = require("lsp-zero")
         -- to learn how to use mason.nvim with lsp-zero

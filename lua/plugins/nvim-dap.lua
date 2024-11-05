@@ -3,9 +3,9 @@ return {
     main  = "dap",
     name  = "dap",
     lazy  = true,
-    event = { "FileType" },
     keys  = require("nvim-config.keys.dap"),
-    build = function(plugin)
+    build = function()
+        local plugin = require("dap")
         local home = os.getenv("HOME")
 
         -- define custom debugger symbols for increased visibility

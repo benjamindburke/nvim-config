@@ -53,6 +53,15 @@ vim.g.netrw_banner = false
 -- configure nerd font support
 vim.g.have_nerd_font = true
 
+-- configure python provider
+vim.g.python3_host_prog = os.getenv("HOME") .. "/.config/nvim/venv/bin/python"
+
+
+-- configure folding
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldlevelstart = 99
+
 -----------------------------------
 -- plugin-specific setting changes
 -----------------------------------

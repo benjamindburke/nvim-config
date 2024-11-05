@@ -1,12 +1,12 @@
 return {
     "hrsh7th/nvim-cmp",
     lazy         = true,
-    event        = { "BufReadPre", "BufNewFile" },
+    event        = { "InsertEnter" },
     dependencies = {
         "vonheikemen/lsp-zero.nvim",
         "windwp/nvim-autopairs",
     },
-    config       = function()
+    build        = function()
         local plugin = require("cmp")
         local cmp_select = { behavior = plugin.SelectBehavior.Select }
         plugin.setup({
@@ -15,7 +15,7 @@ return {
                 {
                     name = "nvim_lsp",
                     keyword_length = 3,
-                    entry_filter = function(entry, _ctx)
+                    entry_filter = function(entry)
                         -- remove all text typed suggestions
                         return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
                     end,

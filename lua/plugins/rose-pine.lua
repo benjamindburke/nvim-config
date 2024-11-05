@@ -5,6 +5,6 @@ return {
     name     = "rose-pine",
     priority = 1000,
     lazy     = true,
-    event    = { "UIEnter" },
+    event    = { "VimEnter" },
     opts     = { swatch = "sakura" },
 }

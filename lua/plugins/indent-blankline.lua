@@ -2,8 +2,10 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
     lazy  = true,
-    event = { "BufReadPre", "BufNewFile" },
-    build = function()
+    main = "ibl",
+    name = "ibl",
+    event = { "BufReadPre", "InsertLeave" },
+    config = function()
         local highlight = {
             "RainbowRed",
             "RainbowYellow",
@@ -16,8 +18,8 @@ return {
 
         -- create the highlight groups in the highlight setup hook, so they are reset
         -- every time the colorscheme changes
-        local plugin = require("indent-blankline")
-        plugin.hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+        local hooks = require("ibl.hooks")
+        hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
             vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
             vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
             vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
@@ -27,6 +29,6 @@ return {
             vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
         end)
 
-        plugin.setup({ indent = { highlight = highlight } })
+        require("ibl").setup({ indent = { highlight = highlight } })
     end,
 }
