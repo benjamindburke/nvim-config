@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-12-09
+
+Update gopls / mason / lspconfig settings to attach gopls to go filetypes
+
 ## 2024-11-05
 
 Change load event for lsps so formatting works using \<leader\>f

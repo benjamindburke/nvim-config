@@ -12,7 +12,6 @@ return {
         local lsp_zero = require("lsp-zero")
         -- to learn how to use mason.nvim with lsp-zero
         -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-        require("mason").setup({})
         require("mason-lspconfig").setup({
             -- full list: https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
             ensure_installed = {
