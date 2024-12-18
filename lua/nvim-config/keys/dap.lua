@@ -49,9 +49,9 @@ return {
     },
 
     {
-        "n",
         "<leader>lp",
         function() require("dap").set_breakpoint(nil, nil, vim.fn.input("log point message: ")) end,
+        mode = { "n" },
         desc = "Set a logging breakpoint with log message"
     },
 

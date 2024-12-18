@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-12-18
+
+Fix dap key config overwriting navigating / or ? searches with 'n'
+
 ## 2024-12-09
 
 Update gopls / mason / lspconfig settings to attach gopls to go filetypes

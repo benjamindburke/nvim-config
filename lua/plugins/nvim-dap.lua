@@ -8,28 +8,6 @@ return {
         local plugin = require("dap")
         local home = os.getenv("HOME")
 
-        -- define custom debugger symbols for increased visibility
-        vim.fn.sign_define(
-            "DapBreakpoint",
-            { text = "🛑", texthl = "", linehl = "", numhl = "" }
-        )
-        vim.fn.sign_define(
-            "DapBreakpointCondition",
-            { text = "⁉️", texthl = "", linehl = "", numhl = "" }
-        )
-        vim.fn.sign_define(
-            "DapLogPoint",
-            { text = "🪵", texthl = "", linehl = "", numhl = "" }
-        )
-        vim.fn.sign_define(
-            "DapStopped",
-            { text = "►", texthl = "", linehl = "", numhl = "" }
-        )
-        vim.fn.sign_define(
-            "DapBreakpointRejected",
-            { text = "☢️", texthl = "", linehl = "", numhl = "" }
-        )
-
         -- configure specific debugging tasks
 
         -- Elixir debugger configuration
@@ -106,6 +84,29 @@ return {
                 justMyCode = false,
                 -- For more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
             }
+        )
+    end,
+    init  = function()
+        -- define custom debugger symbols for increased visibility
+        vim.fn.sign_define(
+            "DapBreakpoint",
+            { text = "🛑", texthl = "", linehl = "", numhl = "" }
+        )
+        vim.fn.sign_define(
+            "DapBreakpointCondition",
+            { text = "⁉️", texthl = "", linehl = "", numhl = "" }
+        )
+        vim.fn.sign_define(
+            "DapLogPoint",
+            { text = "🪵", texthl = "", linehl = "", numhl = "" }
+        )
+        vim.fn.sign_define(
+            "DapStopped",
+            { text = "►", texthl = "", linehl = "", numhl = "" }
+        )
+        vim.fn.sign_define(
+            "DapBreakpointRejected",
+            { text = "☢️", texthl = "", linehl = "", numhl = "" }
         )
     end,
 }
