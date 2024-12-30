@@ -1,2 +1,2 @@
-debugpy==1.8.1
+debugpy==1.8.11
 neovim

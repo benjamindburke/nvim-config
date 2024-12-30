@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-12-30
+
+Update debugpy to support newer python versions
+
 ## 2024-12-18
 
 Fix dap key config overwriting navigating / or ? searches with 'n'
